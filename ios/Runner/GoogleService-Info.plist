@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1009103376936-sodteppvkgcjqak39c3b99cpigmpooh4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1009103376936-sodteppvkgcjqak39c3b99cpigmpooh4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBQ_f_KT6Ih1z0z7Bj9LeK_BFkskZz9nVw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1009103376936</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.kurumoApp</string>
+	<key>PROJECT_ID</key>
+	<string>kurumoappdev</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kurumoappdev.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1009103376936:ios:1a8e22336973e3710fdb1d</string>
+</dict>
+</plist>
