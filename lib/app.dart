@@ -12,6 +12,10 @@ class App extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        /// [AndroidのAppBarのタイトルを中央寄せにする]
+        appBarTheme: const AppBarTheme(
+          centerTitle: true
+        ),
       ),
       home: LoginPage(),
     );
