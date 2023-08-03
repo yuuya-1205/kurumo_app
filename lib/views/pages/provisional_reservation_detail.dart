@@ -27,7 +27,7 @@ class ProvisionalReservationDetail extends StatelessWidget {
             margin: const EdgeInsets.only(left: 22, right: 22),
             color: backgroudWhith,
             width: 358,
-            height: 223,
+            height: 250,
             child: Column(
               children: [
                 SizedBox(height: 8),
@@ -84,6 +84,25 @@ class ProvisionalReservationDetail extends StatelessWidget {
                   color: Colors.grey,
                   thickness: 1,
                 ),
+                Row(
+                  children: [
+                    Icon(Icons.email, color: Colors.grey),
+                    SizedBox(width: 8),
+                    Text(
+                      'mail@example.com',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 16,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ),
+                  ],
+                ),
+                Divider(
+                  color: Colors.grey,
+                  thickness: 1,
+                ),
 
                 /// TODO: 地図のリストを表示する
                 Container(
@@ -95,25 +114,34 @@ class ProvisionalReservationDetail extends StatelessWidget {
                     children: [
                       Row(
                         children: [
-                          Icon(Icons.place, color: Colors.grey),
+                          Container(
+                              width: 20,
+                              child: Icon(Icons.place, color: Colors.grey)),
                           Column(
                             children: [
-                              Text(
-                                '〒100-8111',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
+                              SizedBox(width: 8),
+                              Container(
+                                width: 180,
+                                child: Text(
+                                  '〒100-8111',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
                               ),
-                              Text(
-                                '東京都 千代田区 千代田\n1-1-1',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 16,
-                                  fontFamily: 'Inter',
-                                  fontWeight: FontWeight.w400,
+                              Container(
+                                width: 180,
+                                child: Text(
+                                  '東京都 千代田区 千代田\n1-1-1',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 16,
+                                    fontFamily: 'Inter',
+                                    fontWeight: FontWeight.w400,
+                                  ),
                                 ),
                               ),
                             ],
