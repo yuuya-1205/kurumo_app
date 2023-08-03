@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kurumo_app/views/kari_yoyaku_page.dart';
+import 'package:kurumo_app/views/pages/provisional_reservation.dart';
 import 'package:kurumo_app/views/reserv_list_page.dart';
 
 import 'calendar_page.dart';
@@ -62,7 +62,7 @@ class ReservePageState extends State<ReservePage>
         children: const <Widget>[
           Center(child: ReserveListPage()),
           Center(child: CalendarPage()),
-          Center(child: KariYoyakuPage()),
+          Center(child: ProvisionalReservation()),
         ],
       ),
     );
