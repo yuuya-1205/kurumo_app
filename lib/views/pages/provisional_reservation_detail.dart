@@ -106,53 +106,53 @@ class ProvisionalReservationDetail extends StatelessWidget {
 
                 /// TODO: 地図のリストを表示する
                 Container(
-                  margin: const EdgeInsets.only(left: 22, right: 22),
                   color: backgroudWhith,
                   width: 358,
                   height: 82,
-                  child: Column(
+                  child: Row(
                     children: [
-                      Row(
-                        children: [
-                          Container(
-                              width: 20,
-                              child: Icon(Icons.place, color: Colors.grey)),
-                          Column(
-                            children: [
-                              SizedBox(width: 8),
-                              Container(
-                                width: 180,
-                                child: Text(
-                                  '〒100-8111',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                      Container(
+                          alignment: Alignment.topLeft,
+                          width: 20,
+                          child: Icon(Icons.place, color: Colors.grey)),
+                      const SizedBox(width: 15),
+                      Container(
+                        child: Column(
+                          children: [
+                            SizedBox(width: 8),
+                            Container(
+                              width: 180,
+                              child: Text(
+                                '〒100-8111',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
-                              Container(
-                                width: 180,
-                                child: Text(
-                                  '東京都 千代田区 千代田\n1-1-1',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontSize: 16,
-                                    fontFamily: 'Inter',
-                                    fontWeight: FontWeight.w400,
-                                  ),
+                            ),
+                            Container(
+                              width: 180,
+                              child: Text(
+                                '東京都 千代田区 千代田\n1-1-1',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w400,
                                 ),
                               ),
-                            ],
-                          ),
-                          const SizedBox(width: 11),
-                          Container(
-                            color: Colors.grey,
-                            width: 80,
-                            height: 80,
-                          ),
-                        ],
+                            ),
+                            const SizedBox(width: 15),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(width: 11),
+                      Container(
+                        color: Colors.grey,
+                        width: 80,
+                        height: 80,
                       ),
                     ],
                   ),
@@ -167,16 +167,48 @@ class ProvisionalReservationDetail extends StatelessWidget {
             height: 38,
             child: Row(
               children: [
-                Icon(Icons.access_time, color: Colors.grey),
-                const SizedBox(width: 15),
-                Text('2023/06/12 (月)　12:00 -'),
-                const SizedBox(width: 15),
-                SizedBox(
-                    width: 121, child: Button(text: '出張希望', onPressed: () {})),
+                Icon(Icons.schedule, color: Colors.grey),
+                SizedBox(width: 15),
+                Text(
+                  '2023/06/12 (月)　12:00 -',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+                SizedBox(width: 15),
+                Container(
+                  width: 69,
+                  height: 20,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                  decoration: ShapeDecoration(
+                    color: Color(0xFFF9B44C),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(4)),
+                  ),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text(
+                        '出張希望',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontFamily: 'Noto Sans JP',
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
-          const SizedBox(height: 38),
           Container(
             color: backgroudWhith,
             width: 358,
@@ -208,29 +240,33 @@ class ProvisionalReservationDetail extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      width: 250,
-                      child: Text(
-                        'トヨタ ライズ',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Noto Sans JP',
-                          fontWeight: FontWeight.w400,
-                        ),
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'トヨタ ライズ',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontFamily: 'Noto Sans JP',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                          Text(
+                            '1.5 ハイブリッド GRスポーツ CVT',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontFamily: 'Noto Sans JP',
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
-                    Container(
-                      width: 250,
-                      child: Text(
-                        '1.5 ハイブリッド GRスポーツ CVT',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 16,
-                          fontFamily: 'Noto Sans JP',
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
+                    )
                   ],
                 ),
               ],
@@ -329,6 +365,7 @@ class ProvisionalReservationDetail extends StatelessWidget {
                     ),
                   ],
                 ),
+                Divider(),
               ],
             ),
           ),

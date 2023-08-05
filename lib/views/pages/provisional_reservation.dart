@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/views/components/button.dart';
 import 'package:kurumo_app/views/pages/provisional_reservation_detail.dart';
 
 class ProvisionalReservation extends StatelessWidget {
