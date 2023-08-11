@@ -4,6 +4,7 @@ import 'package:kurumo_app/util/color.dart';
 import 'package:kurumo_app/views/components/button.dart';
 import 'package:kurumo_app/views/components/input_form.dart';
 import 'package:kurumo_app/views/home_page.dart';
+import 'package:kurumo_app/views/pages/auth/register_select_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -92,12 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                     //   await authLogin(email: email, password: password);
                     // ignore: use_build_context_synchronously
 
-                    // await Navigator.pushReplacement(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: ((context) => const TopPage()),
-                    //   ),
-                    // );
+                    Navigator.push(context, HomePage.route());
                   } on FirebaseAuthException catch (e) {
                     switch (e.code) {
                       case 'wrong-password':
@@ -145,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, HomePage.route());
+                  Navigator.push(context, RegisterSelectPage.route());
                 },
                 child: const Text(
                   '新規登録',
@@ -158,10 +154,3 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
-
-//  ElevatedButton(
-//               onPressed: () {
-//                 Navigator.push(context, HomePage.route());
-//               },
-//               child: const Text('ログイン'),
-//             ),
