@@ -32,30 +32,63 @@ class ProvisionalReservationDetail extends StatelessWidget {
               children: [
                 SizedBox(height: 8),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Icon(Icons.person, color: Colors.grey),
                     SizedBox(width: 8),
-                    Column(
-                      children: [
-                        Text(
-                          'キャクオ タロウ',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 8,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
+                    Container(
+                      width: 150,
+                      height: 45,
+                      child: Column(
+                        children: [
+                          Container(
+                            width: 150,
+                            height: 19,
+                            child: Align(
+                              alignment: Alignment.topLeft,
+                              child: Text(
+                                'キャクオ タロウ',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 8,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                        Text(
-                          '客尾 太郎',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontFamily: 'Inter',
-                            fontWeight: FontWeight.w700,
+                          Row(
+                            children: [
+                              Text(
+                                '客尾 太郎',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 16,
+                                  fontFamily: 'Inter',
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
+                              SizedBox(width: 9),
+                              Container(
+                                width: 68,
+                                height: 19,
+                                child: Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    'さん',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 8,
+                                      fontFamily: 'Inter',
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                ),
+                              )
+                            ],
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
                   ],
                 ),
@@ -161,6 +194,22 @@ class ProvisionalReservationDetail extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 38),
+          Padding(
+            padding: const EdgeInsets.only(left: 22),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '予約日時',
+                style: TextStyle(
+                  color: Color(0xFF98999B),
+                  fontSize: 8,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 6),
           Container(
             color: backgroudWhith,
             width: 358,
@@ -209,6 +258,23 @@ class ProvisionalReservationDetail extends StatelessWidget {
               ],
             ),
           ),
+          const SizedBox(height: 19),
+          Padding(
+            padding: const EdgeInsets.only(left: 22),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'ヒアリング詳細',
+                style: TextStyle(
+                  color: Color(0xFF909090),
+                  fontSize: 8,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 6),
           Container(
             color: backgroudWhith,
             width: 358,
@@ -292,7 +358,7 @@ class ProvisionalReservationDetail extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(height: 38),
+          const SizedBox(height: 34),
           Padding(
             padding: const EdgeInsets.only(left: 22),
             child: Align(
@@ -308,7 +374,7 @@ class ProvisionalReservationDetail extends StatelessWidget {
               ),
             ),
           ),
-          const SizedBox(height: 34),
+          const SizedBox(height: 6),
           Container(
             color: backgroudWhith,
             width: 358,
@@ -366,6 +432,27 @@ class ProvisionalReservationDetail extends StatelessWidget {
                   ],
                 ),
                 Divider(),
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Flexible(
+                        child: Button(
+                            backgroundColor: Color(0xFFD8DADD),
+                            text: 'お断りする',
+                            onPressed: () {}),
+                      ),
+                      const SizedBox(width: 8),
+                      Flexible(
+                        child: Button(
+                            backgroundColor: Color(0xFF1FA1CA),
+                            text: '予約確定',
+                            onPressed: () {}),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
