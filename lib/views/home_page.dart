@@ -59,7 +59,7 @@ class HomePageState extends State<HomePage>
             label: '履歴',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.person),
             label: '設定',
           ),
         ],
