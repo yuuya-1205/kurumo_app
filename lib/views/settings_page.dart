@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/views/components/setting_page/setting_page_body.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -15,14 +16,7 @@ class SettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('設定ページ'),
-          ],
-        ),
-      ),
+      body: SettingPageBody(),
     );
   }
 }
