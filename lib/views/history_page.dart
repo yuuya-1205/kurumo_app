@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/views/pages/review/review_body.dart';
 
 class HistoryPage extends StatelessWidget {
   const HistoryPage({super.key});
@@ -15,14 +16,7 @@ class HistoryPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('履歴ページ'),
-          ],
-        ),
-      ),
+      body: ReviewBody(),
     );
   }
 }
