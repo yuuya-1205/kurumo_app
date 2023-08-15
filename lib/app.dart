@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/themes.dart';
 import 'package:kurumo_app/views/pages/auth/login_page.dart';
 
 class App extends StatelessWidget {
@@ -9,10 +10,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: false,
-      ),
+      theme: Themes.defaultTheme,
       home: LoginPage(),
     );
   }
