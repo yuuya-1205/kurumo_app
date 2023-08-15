@@ -86,8 +86,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Button(
                 onPressed: () async {
-                  final email = emailController.text;
-                  final password = passwordController.text;
+                  // final email = emailController.text;
+                  // final password = passwordController.text;
                   try {
                     ///repositoryパターンで使うこと。
                     //   await authLogin(email: email, password: password);

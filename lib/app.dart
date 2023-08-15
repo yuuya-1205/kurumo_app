@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/util/color.dart';
 import 'package:kurumo_app/views/pages/auth/login_page.dart';
 
 class App extends StatelessWidget {
@@ -10,10 +11,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primaryColor: primary,
         useMaterial3: false,
       ),
-      home: LoginPage(),
+      home: const LoginPage(),
     );
   }
 }

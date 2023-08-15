@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:kurumo_app/app.dart';
 import 'package:kurumo_app/views/components/button.dart';
 import 'package:kurumo_app/views/pages/auth/create_account_page.dart';
 
