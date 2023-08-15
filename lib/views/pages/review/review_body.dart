@@ -186,79 +186,82 @@ class ReviewListItem extends StatelessWidget {
   Widget _photos() {
     return SizedBox(
       height: 120,
-      child: ListView(
-        shrinkWrap: true,
-        scrollDirection: Axis.horizontal,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Themes.grayColor[100],
-              ),
-              child: const Icon(
-                Icons.photo,
-                color: Themes.grayColor,
-                size: 24,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Themes.grayColor[100],
-              ),
-              child: const Icon(
-                Icons.photo,
-                color: Themes.grayColor,
-                size: 24,
+      child: Scrollbar(
+        radius: const Radius.circular(16),
+        child: ListView(
+          shrinkWrap: true,
+          scrollDirection: Axis.horizontal,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Themes.grayColor[100],
+                ),
+                child: const Icon(
+                  Icons.photo,
+                  color: Themes.grayColor,
+                  size: 24,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Themes.grayColor[100],
-              ),
-              child: const Icon(
-                Icons.photo,
-                color: Themes.grayColor,
-                size: 24,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 4),
-            child: Container(
-              margin: const EdgeInsets.symmetric(vertical: 8),
-              height: 100,
-              width: 100,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                color: Themes.grayColor[100],
-              ),
-              child: const Icon(
-                Icons.photo,
-                color: Themes.grayColor,
-                size: 24,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Themes.grayColor[100],
+                ),
+                child: const Icon(
+                  Icons.photo,
+                  color: Themes.grayColor,
+                  size: 24,
+                ),
               ),
             ),
-          ),
-        ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Themes.grayColor[100],
+                ),
+                child: const Icon(
+                  Icons.photo,
+                  color: Themes.grayColor,
+                  size: 24,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 8),
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Themes.grayColor[100],
+                ),
+                child: const Icon(
+                  Icons.photo,
+                  color: Themes.grayColor,
+                  size: 24,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -271,7 +274,7 @@ class ReviewListItem extends StatelessWidget {
         color: Colors.white,
       ),
       margin: const EdgeInsets.symmetric(vertical: 16),
-      padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+      padding: const EdgeInsets.all(16),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
