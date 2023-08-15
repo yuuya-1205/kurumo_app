@@ -61,6 +61,7 @@ class _ReviewBodyState extends State<ReviewBody> {
           ),
           Expanded(
             child: ListView(
+              padding: EdgeInsets.zero,
               shrinkWrap: true,
               children: const [
                 ReviewListItem(),
