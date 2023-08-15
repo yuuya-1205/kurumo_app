@@ -47,19 +47,19 @@ class HomePageState extends State<HomePage>
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
+            icon: Icon(Icons.home),
             label: '予約',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.store),
+            icon: Icon(Icons.business),
             label: '業者一覧',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.history),
+            icon: Icon(Icons.school),
             label: '履歴',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.person),
+            icon: Icon(Icons.school),
             label: '設定',
           ),
         ],
