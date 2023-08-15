@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/views/review_page.dart';
 
-class HistoryPage extends StatelessWidget {
+import 'calendar_page.dart';
+import 'history_list_page.dart';
+
+class HistoryPage extends StatefulWidget {
   const HistoryPage({super.key});
 
   static Route<void> route() {
@@ -13,15 +17,51 @@ class HistoryPage extends StatelessWidget {
   }
 
   @override
+  HistoryPageState createState() => HistoryPageState();
+}
+
+class HistoryPageState extends State<HistoryPage>
+    with SingleTickerProviderStateMixin {
+  final _tab = <Tab>[
+    const Tab(text: '履歴'),
+    const Tab(text: '評価・口コミ'),
+  ];
+
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: _tab.length);
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        flexibleSpace: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Text('履歴ページ'),
+            TabBar(
+              controller: _tabController,
+              tabs: _tab,
+            ),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: const <Widget>[
+          Center(child: HistoryListPage()),
+          Center(child: ReviewPage()),
+        ],
       ),
     );
   }
