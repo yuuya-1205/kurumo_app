@@ -52,7 +52,12 @@ class _ReviewBodyState extends State<ReviewBody> {
                 },
                 child: Row(
                   children: [
-                    Text(_selectedValue),
+                    Text(
+                      _selectedValue,
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                     const Icon(Icons.keyboard_arrow_down),
                   ],
                 ),
