@@ -38,12 +38,7 @@ class _RegisterSelectDevicePageState extends State<RegisterSelectDevicePage> {
             Button(
               width: double.infinity,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const RegisterSendEmailPage()),
-                  ),
-                );
+                Navigator.push(context, RegisterSendEmailPage.route());
               },
               backgroundColor: primary,
               text: "メールアドレスで続ける",

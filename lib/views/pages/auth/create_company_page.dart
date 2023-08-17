@@ -8,6 +8,15 @@ import 'package:kurumo_app/views/home_page.dart';
 class CreateCompanyPage extends StatefulWidget {
   const CreateCompanyPage({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(
+        name: '/createCompanyPage',
+      ),
+      builder: (_) => const CreateCompanyPage(),
+    );
+  }
+
   @override
   State<CreateCompanyPage> createState() => _CreateCompanyPageState();
 }
@@ -89,12 +98,7 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
               width: double.infinity,
               onPressed: () {
                 //ここでCompanyが作成されるようにする。
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const HomePage()),
-                  ),
-                );
+                Navigator.push(context, HomePage.route());
               },
               backgroundColor: primary,
               text: "アカウントを作成",

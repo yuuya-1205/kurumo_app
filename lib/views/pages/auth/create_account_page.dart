@@ -8,6 +8,15 @@ import 'package:kurumo_app/views/pages/auth/create_company_page.dart';
 class CreateAccuntPage extends StatefulWidget {
   const CreateAccuntPage({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(
+        name: '/registerSendEmailPage',
+      ),
+      builder: (_) => const CreateAccuntPage(),
+    );
+  }
+
   @override
   State<CreateAccuntPage> createState() => _CreateAccuntPageState();
 }
@@ -59,12 +68,7 @@ class _CreateAccuntPageState extends State<CreateAccuntPage> {
             Button(
               width: double.infinity,
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const CreateCompanyPage()),
-                  ),
-                );
+                Navigator.push(context, CreateCompanyPage.route());
               },
               backgroundColor: primary,
               text: "アカウントを作成",

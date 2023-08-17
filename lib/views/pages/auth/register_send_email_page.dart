@@ -32,12 +32,7 @@ class _RegisterSendEmailPageState extends State<RegisterSendEmailPage> {
             Button(
               text: '',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const CreateAccuntPage()),
-                  ),
-                );
+                Navigator.push(context, CreateAccuntPage.route());
               },
             )
           ],
