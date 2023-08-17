@@ -28,12 +28,7 @@ class RegisterSelectPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const RegisterSelectPage()),
-                  ),
-                );
+                ///TODO costomerページが出来次第作成する。
               },
               child: SizedBox(
                 width: double.infinity,
@@ -46,12 +41,7 @@ class RegisterSelectPage extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const RegisterSelectDevicePage()),
-                  ),
-                );
+                Navigator.push(context, RegisterSelectDevicePage.route());
               },
               child: SizedBox(
                 width: double.infinity,
