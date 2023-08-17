@@ -5,6 +5,15 @@ import 'package:kurumo_app/views/pages/auth/create_account_page.dart';
 class RegisterSendEmailPage extends StatefulWidget {
   const RegisterSendEmailPage({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(
+        name: '/registerSendEmailPage',
+      ),
+      builder: (_) => const RegisterSendEmailPage(),
+    );
+  }
+
   @override
   State<RegisterSendEmailPage> createState() => _RegisterSendEmailPageState();
 }

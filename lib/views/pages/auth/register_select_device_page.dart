@@ -7,6 +7,15 @@ import 'register_send_email_page.dart';
 class RegisterSelectDevicePage extends StatefulWidget {
   const RegisterSelectDevicePage({super.key});
 
+  static Route<void> route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(
+        name: '/registerSelectDevicePage',
+      ),
+      builder: (_) => const RegisterSelectDevicePage(),
+    );
+  }
+
   @override
   State<RegisterSelectDevicePage> createState() =>
       _RegisterSelectDevicePageState();
