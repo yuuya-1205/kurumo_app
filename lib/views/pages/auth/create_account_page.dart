@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/models/trader.dart';
 import 'package:kurumo_app/util/color.dart';
 import 'package:kurumo_app/views/components/button.dart';
 import 'package:kurumo_app/views/components/input_form.dart';
@@ -11,7 +14,7 @@ class CreateAccuntPage extends StatefulWidget {
   static Route<void> route() {
     return MaterialPageRoute(
       settings: const RouteSettings(
-        name: '/registerSendEmailPage',
+        name: '/createAccuntPage',
       ),
       builder: (_) => const CreateAccuntPage(),
     );
@@ -21,9 +24,13 @@ class CreateAccuntPage extends StatefulWidget {
   State<CreateAccuntPage> createState() => _CreateAccuntPageState();
 }
 
+///このページはUser登録が終わってユーザー情報を登録するページ
+///fetchUserするところ。uidと紐付け
 class _CreateAccuntPageState extends State<CreateAccuntPage> {
   @override
   Widget build(BuildContext context) {
+    final traderCollection = FirebaseFirestore.instance.collection('trader');
+    final uid = FirebaseAuth.instance.currentUser!.uid;
     final familyNameController = TextEditingController();
     final personalNameController = TextEditingController();
     return Scaffold(
@@ -67,8 +74,18 @@ class _CreateAccuntPageState extends State<CreateAccuntPage> {
             ),
             Button(
               width: double.infinity,
-              onPressed: () {
-                Navigator.push(context, CreateCompanyPage.route());
+              onPressed: () async {
+                final traderSurName = familyNameController.text;
+                final traderPersonalName = personalNameController.text;
+                final trader = Trader(
+                  traderSurName: traderSurName,
+                  traderPersonalName: traderPersonalName,
+                );
+                await traderCollection
+                    .doc(uid)
+                    .set(trader.toJson(), SetOptions(merge: true));
+
+                await Navigator.push(context, CreateCompanyPage.route());
               },
               backgroundColor: primary,
               text: "アカウントを作成",

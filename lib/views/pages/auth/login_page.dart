@@ -121,9 +121,8 @@ class _LoginPageState extends State<LoginPage> {
                         email: email,
                         password: password,
                       );
-                      // ignore: use_build_context_synchronously
 
-                      Navigator.push(context, HomePage.route());
+                      await Navigator.push(context, HomePage.route());
                     } on FirebaseAuthException catch (e) {
                       switch (e.code) {
                         case 'wrong-password':
