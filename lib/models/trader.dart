@@ -6,7 +6,6 @@ part 'trader.g.dart';
 @freezed
 class Trader with _$Trader {
   const factory Trader({
-    required String companyName,
     required String traderSurName,
     required String traderPersonalName,
     @Freezed(fromJson: true) @Default([]) List<String> constractionImages,
