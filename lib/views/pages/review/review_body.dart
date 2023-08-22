@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kurumo_app/themes.dart';
+import 'package:kurumo_app/views/components/photo_preview.dart';
 
 class ReviewBody extends StatefulWidget {
   const ReviewBody({Key? key}) : super(key: key);
@@ -68,10 +69,10 @@ class _ReviewBodyState extends State<ReviewBody> {
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
-              children: const [
+              children: [
                 ReviewListItem(),
                 ReviewListItem(),
-                SizedBox(
+                const SizedBox(
                   height: 200,
                 ),
               ],
@@ -84,7 +85,7 @@ class _ReviewBodyState extends State<ReviewBody> {
 }
 
 class ReviewListItem extends StatelessWidget {
-  const ReviewListItem({Key? key}) : super(key: key);
+  ReviewListItem({Key? key}) : super(key: key);
 
   final _reviewerInitial = 'A・H';
   final _reviewerGeneral = '30代・女性';
@@ -188,88 +189,21 @@ class ReviewListItem extends StatelessWidget {
     );
   }
 
-  Widget _photos() {
-    return SizedBox(
-      height: 120,
-      child: Scrollbar(
-        radius: const Radius.circular(16),
-        child: ListView(
-          shrinkWrap: true,
-          scrollDirection: Axis.horizontal,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 8),
-                height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Themes.grayColor[100],
-                ),
-                child: const Icon(
-                  Icons.photo,
-                  color: Themes.grayColor,
-                  size: 24,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 8),
-                height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Themes.grayColor[100],
-                ),
-                child: const Icon(
-                  Icons.photo,
-                  color: Themes.grayColor,
-                  size: 24,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 8),
-                height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Themes.grayColor[100],
-                ),
-                child: const Icon(
-                  Icons.photo,
-                  color: Themes.grayColor,
-                  size: 24,
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 4),
-              child: Container(
-                margin: const EdgeInsets.symmetric(vertical: 8),
-                height: 100,
-                width: 100,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(8),
-                  color: Themes.grayColor[100],
-                ),
-                child: const Icon(
-                  Icons.photo,
-                  color: Themes.grayColor,
-                  size: 24,
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+
+  final List<Image> images = [
+    Image.asset(
+      'assets/images/no_image.png',
+    ),
+    Image.asset(
+      'assets/images/no_image.png',
+    ),
+    Image.asset(
+      'assets/images/no_image.png',
+    ),
+    Image.asset(
+      'assets/images/no_image.png',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -322,7 +256,7 @@ class ReviewListItem extends StatelessWidget {
           const SizedBox(
             height: 16,
           ),
-          _photos(),
+          photoPreview(images, context),
         ],
       ),
     );
