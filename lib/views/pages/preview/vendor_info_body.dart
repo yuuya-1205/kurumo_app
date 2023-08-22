@@ -62,7 +62,7 @@ class _VendorInfoBodyState extends State<VendorInfoBody> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 32,
+              height: 8,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
