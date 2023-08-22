@@ -38,10 +38,10 @@ class _PreviewReviewBodyState extends State<PreviewReviewBody> {
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
-              children: const [
+              children: [
                 ReviewListItem(),
                 ReviewListItem(),
-                SizedBox(
+                const SizedBox(
                   height: 200,
                 ),
               ],

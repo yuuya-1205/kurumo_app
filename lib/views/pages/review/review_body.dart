@@ -65,10 +65,10 @@ class _ReviewBodyState extends State<ReviewBody> {
             child: ListView(
               padding: EdgeInsets.zero,
               shrinkWrap: true,
-              children: const [
+              children: [
                 ReviewListItem(),
                 ReviewListItem(),
-                SizedBox(
+                const SizedBox(
                   height: 200,
                 ),
               ],
