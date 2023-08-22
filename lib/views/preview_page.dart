@@ -38,27 +38,34 @@ class _PreviewPageState extends State<PreviewPage>
     _tabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        flexibleSpace: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            TabBar(
-              controller: _tabController,
-              tabs: _tab,
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return <Widget>[
+            SliverAppBar(
+              title: const Text('掲載情報'),
+              bottom: TabBar(
+                controller: _tabController,
+                tabs: _tab,
+              ),
+              floating: true,
+              pinned: true,
+              snap: true,
+              forceElevated: innerBoxIsScrolled,
             ),
+          ];
+        },
+        body: TabBarView(
+          controller: _tabController,
+          children: const <Widget>[
+            VendorInfoBody(),
+            ReviewBody(),
           ],
         ),
-      ),
-      body: TabBarView(
-        controller: _tabController,
-        children: const <Widget>[
-          VendorInfoBody(),
-          ReviewBody(),
-        ],
       ),
     );
   }

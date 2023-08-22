@@ -19,7 +19,7 @@ class Themes {
       titleTextStyle: TextStyle(
         color: grayColor.shade900,
         fontWeight: FontWeight.bold,
-        fontSize: 16,
+        fontSize: 14,
       ),
       iconTheme: IconThemeData(color: grayColor[800], size: 20),
     ),
