@@ -53,6 +53,22 @@ class Themes {
         borderRadius: BorderRadius.circular(16),
       ),
     ),
+    tabBarTheme: TabBarTheme(
+      labelColor: primaryColor,
+      unselectedLabelColor: grayColor.shade600,
+      labelStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+      unselectedLabelStyle: const TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
+      indicator: const UnderlineTabIndicator(
+        borderSide: BorderSide(
+          color: primaryColor,
+          width: 2,
+        ),
+      ),
+    ),
     dividerColor: Colors.transparent,
     shadowColor: grayColor.shade700,
   );
