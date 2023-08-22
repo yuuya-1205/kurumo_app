@@ -15,13 +15,18 @@ Widget photoPreview(List<Image> images, BuildContext context) {
     );
   }
 
+  final scrollController = ScrollController();
+
+  //TODO: scrollBarが変な位置に出るので修正する
   return SizedBox(
     height: 100,
     child: Scrollbar(
+      controller: scrollController,
       radius: const Radius.circular(16),
       child: ListView.separated(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
+        controller: scrollController,
         itemCount: images.length,
         itemBuilder: (context, index) {
           return GestureDetector(

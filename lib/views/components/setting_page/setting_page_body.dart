@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:kurumo_app/views/preview_page.dart';
 import 'package:settings_ui/settings_ui.dart';
 
 class SettingPageBody extends HookConsumerWidget {
@@ -126,7 +127,7 @@ class SettingPageBody extends HookConsumerWidget {
                         child: TextButton(
                           /// TODO : 掲載ページに遷移する機能を追加
                           onPressed: () {
-                            print('掲載ページを表示');
+                            Navigator.push(context, PreviewPage.route());
                           },
                           style: TextButton.styleFrom(
                             backgroundColor: const Color(0xFF1FA2CB),
