@@ -41,7 +41,7 @@ class _RegisterSelectDevicePageState extends State<RegisterSelectDevicePage> {
                 Navigator.push(context, RegisterSendEmailPage.route());
               },
               backgroundColor: primary,
-              text: "メールアドレスで続ける",
+              label: "メールアドレスで続ける",
             ),
             const SizedBox(
               height: 50,
@@ -61,7 +61,7 @@ class _RegisterSelectDevicePageState extends State<RegisterSelectDevicePage> {
                 );
               },
               backgroundColor: primary,
-              text: "Googleで続ける",
+              label: "Googleで続ける",
             ),
             const SizedBox(
               height: 18,
@@ -77,7 +77,7 @@ class _RegisterSelectDevicePageState extends State<RegisterSelectDevicePage> {
                 );
               },
               backgroundColor: primary,
-              text: "Appleで続ける",
+              label: "Appleで続ける",
             ),
           ],
         ),

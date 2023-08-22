@@ -4,7 +4,7 @@ class Button extends StatelessWidget {
   const Button({
     super.key,
     this.onPressed,
-    required this.text,
+    required this.label,
     this.primary,
     this.onPrimary,
     this.style,
@@ -13,7 +13,7 @@ class Button extends StatelessWidget {
     this.height,
   });
   final VoidCallback? onPressed;
-  final String text;
+  final String label;
   final Color? primary;
   final Color? onPrimary;
   final TextStyle? style;
@@ -37,7 +37,7 @@ class Button extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: Text(
-          text,
+          label,
           style: const TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.bold,

@@ -104,7 +104,7 @@ class _RegisterSendEmailPageState extends State<RegisterSendEmailPage> {
                 ),
                 Button(
                   ///TODOメール確認ロジックを作成
-                  text: '新規登録',
+                  label: '新規登録',
                   backgroundColor: primary,
                   onPressed: () async {
                     final email = emailController.text;
