@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/views/pages/preview/preview_review_body.dart';
 import 'package:kurumo_app/views/pages/preview/vendor_info_body.dart';
-import 'package:kurumo_app/views/pages/review/review_body.dart';
 
 class PreviewPage extends StatefulWidget {
   const PreviewPage({Key? key}) : super(key: key);
@@ -63,7 +63,7 @@ class _PreviewPageState extends State<PreviewPage>
           controller: _tabController,
           children: const <Widget>[
             VendorInfoBody(),
-            ReviewBody(),
+            PreviewReviewBody(),
           ],
         ),
       ),

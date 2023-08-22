@@ -81,7 +81,7 @@ class _VendorInfoBodyState extends State<VendorInfoBody> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ratingStars(4.5),
+                    const RatingStars(rate: 4.5,),
                     const SizedBox(height: 8),
                     Text(
                       vendorName,
