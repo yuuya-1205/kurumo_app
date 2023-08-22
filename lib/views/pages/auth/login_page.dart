@@ -26,7 +26,6 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  String errorMessage = '';
 
   @override
   void dispose() {
@@ -95,10 +94,6 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 16,
                 ),
-                Text(
-                  errorMessage,
-                  style: const TextStyle(color: Colors.red),
-                ),
                 const SizedBox(
                   height: 16,
                 ),
@@ -115,30 +110,13 @@ class _LoginPageState extends State<LoginPage> {
                     if (!_formKey.currentState!.validate()) {
                       return;
                     }
-                    try {
-                      ///repositoryパターンで使うこと。
-                      await FirebaseAuth.instance.signInWithEmailAndPassword(
-                        email: email,
-                        password: password,
-                      );
 
-                      await Navigator.push(context, HomePage.route());
-                    } on FirebaseAuthException catch (e) {
-                      switch (e.code) {
-                        case 'wrong-password':
-                          errorMessage = 'パスワードが間違っています';
-                          break;
-                        case 'user-not-found':
-                          errorMessage = 'メールアドレスが登録されていません';
-                          break;
-                        case 'invalid-email':
-                          errorMessage = 'メールアドレスを入力してください';
-                          break;
-                        case 'too-many-requests':
-                          errorMessage = 'パスワードを再設定してください';
-                          break;
-                      }
-                    }
+                    ///repositoryパターンで使うこと。
+                    await FirebaseAuth.instance.signInWithEmailAndPassword(
+                      email: email,
+                      password: password,
+                    );
+                    await Navigator.push(context, HomePage.route());
                   },
                   backgroundColor: primary,
                   text: "ログイン",
