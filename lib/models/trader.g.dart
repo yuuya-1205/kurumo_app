@@ -7,7 +7,6 @@ part of 'trader.dart';
 // **************************************************************************
 
 _$_Trader _$$_TraderFromJson(Map<String, dynamic> json) => _$_Trader(
-      companyName: json['companyName'] as String,
       traderSurName: json['traderSurName'] as String,
       traderPersonalName: json['traderPersonalName'] as String,
       constractionImages: (json['constractionImages'] as List<dynamic>?)
@@ -19,7 +18,6 @@ _$_Trader _$$_TraderFromJson(Map<String, dynamic> json) => _$_Trader(
     );
 
 Map<String, dynamic> _$$_TraderToJson(_$_Trader instance) => <String, dynamic>{
-      'companyName': instance.companyName,
       'traderSurName': instance.traderSurName,
       'traderPersonalName': instance.traderPersonalName,
       'constractionImages': instance.constractionImages,

@@ -20,7 +20,6 @@ Trader _$TraderFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Trader {
-  String get companyName => throw _privateConstructorUsedError;
   String get traderSurName => throw _privateConstructorUsedError;
   String get traderPersonalName => throw _privateConstructorUsedError;
   @Freezed(fromJson: true)
@@ -39,8 +38,7 @@ abstract class $TraderCopyWith<$Res> {
       _$TraderCopyWithImpl<$Res, Trader>;
   @useResult
   $Res call(
-      {String companyName,
-      String traderSurName,
+      {String traderSurName,
       String traderPersonalName,
       @Freezed(fromJson: true) List<String> constractionImages,
       String traderImage,
@@ -60,7 +58,6 @@ class _$TraderCopyWithImpl<$Res, $Val extends Trader>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? companyName = null,
     Object? traderSurName = null,
     Object? traderPersonalName = null,
     Object? constractionImages = null,
@@ -68,10 +65,6 @@ class _$TraderCopyWithImpl<$Res, $Val extends Trader>
     Object? detail = null,
   }) {
     return _then(_value.copyWith(
-      companyName: null == companyName
-          ? _value.companyName
-          : companyName // ignore: cast_nullable_to_non_nullable
-              as String,
       traderSurName: null == traderSurName
           ? _value.traderSurName
           : traderSurName // ignore: cast_nullable_to_non_nullable
@@ -103,8 +96,7 @@ abstract class _$$_TraderCopyWith<$Res> implements $TraderCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {String companyName,
-      String traderSurName,
+      {String traderSurName,
       String traderPersonalName,
       @Freezed(fromJson: true) List<String> constractionImages,
       String traderImage,
@@ -121,7 +113,6 @@ class __$$_TraderCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? companyName = null,
     Object? traderSurName = null,
     Object? traderPersonalName = null,
     Object? constractionImages = null,
@@ -129,10 +120,6 @@ class __$$_TraderCopyWithImpl<$Res>
     Object? detail = null,
   }) {
     return _then(_$_Trader(
-      companyName: null == companyName
-          ? _value.companyName
-          : companyName // ignore: cast_nullable_to_non_nullable
-              as String,
       traderSurName: null == traderSurName
           ? _value.traderSurName
           : traderSurName // ignore: cast_nullable_to_non_nullable
@@ -161,8 +148,7 @@ class __$$_TraderCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Trader implements _Trader {
   const _$_Trader(
-      {required this.companyName,
-      required this.traderSurName,
+      {required this.traderSurName,
       required this.traderPersonalName,
       @Freezed(fromJson: true) final List<String> constractionImages = const [],
       this.traderImage = '',
@@ -172,8 +158,6 @@ class _$_Trader implements _Trader {
   factory _$_Trader.fromJson(Map<String, dynamic> json) =>
       _$$_TraderFromJson(json);
 
-  @override
-  final String companyName;
   @override
   final String traderSurName;
   @override
@@ -198,7 +182,7 @@ class _$_Trader implements _Trader {
 
   @override
   String toString() {
-    return 'Trader(companyName: $companyName, traderSurName: $traderSurName, traderPersonalName: $traderPersonalName, constractionImages: $constractionImages, traderImage: $traderImage, detail: $detail)';
+    return 'Trader(traderSurName: $traderSurName, traderPersonalName: $traderPersonalName, constractionImages: $constractionImages, traderImage: $traderImage, detail: $detail)';
   }
 
   @override
@@ -206,8 +190,6 @@ class _$_Trader implements _Trader {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Trader &&
-            (identical(other.companyName, companyName) ||
-                other.companyName == companyName) &&
             (identical(other.traderSurName, traderSurName) ||
                 other.traderSurName == traderSurName) &&
             (identical(other.traderPersonalName, traderPersonalName) ||
@@ -223,7 +205,6 @@ class _$_Trader implements _Trader {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      companyName,
       traderSurName,
       traderPersonalName,
       const DeepCollectionEquality().hash(_constractionImages),
@@ -246,8 +227,7 @@ class _$_Trader implements _Trader {
 
 abstract class _Trader implements Trader {
   const factory _Trader(
-      {required final String companyName,
-      required final String traderSurName,
+      {required final String traderSurName,
       required final String traderPersonalName,
       @Freezed(fromJson: true) final List<String> constractionImages,
       final String traderImage,
@@ -255,8 +235,6 @@ abstract class _Trader implements Trader {
 
   factory _Trader.fromJson(Map<String, dynamic> json) = _$_Trader.fromJson;
 
-  @override
-  String get companyName;
   @override
   String get traderSurName;
   @override
