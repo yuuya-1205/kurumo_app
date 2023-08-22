@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:kurumo_app/themes.dart';
 import 'package:kurumo_app/views/components/photo_preview.dart';
+import 'package:kurumo_app/views/components/rating_stares.dart';
 
 class ReviewBody extends StatefulWidget {
   const ReviewBody({Key? key}) : super(key: key);
@@ -135,61 +135,6 @@ class ReviewListItem extends StatelessWidget {
     );
   }
 
-  Widget _stars() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        const FaIcon(
-          FontAwesomeIcons.solidStar,
-          color: Themes.accentColor,
-          size: 20,
-        ),
-        const FaIcon(
-          FontAwesomeIcons.solidStar,
-          color: Themes.accentColor,
-          size: 20,
-        ),
-        const FaIcon(
-          FontAwesomeIcons.solidStar,
-          color: Themes.accentColor,
-          size: 20,
-        ),
-        Stack(
-          children: [
-            FaIcon(
-              FontAwesomeIcons.solidStar,
-              color: Themes.grayColor[100],
-              size: 20,
-            ),
-            const FaIcon(
-              FontAwesomeIcons.solidStarHalf,
-              color: Themes.accentColor,
-              size: 20,
-            ),
-          ],
-        ),
-        FaIcon(
-          FontAwesomeIcons.solidStar,
-          color: Themes.grayColor[100],
-          size: 20,
-        ),
-        const SizedBox(
-          width: 8,
-        ),
-        Text(
-          '3.5',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Themes.grayColor[900],
-            fontSize: 16,
-            height: 1.5,
-          ),
-        ),
-      ],
-    );
-  }
-
-
   final List<Image> images = [
     Image.asset(
       'assets/images/no_image.png',
@@ -221,7 +166,7 @@ class ReviewListItem extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               _reviewerInfo(),
-              _stars(),
+              ratingStars(4.5),
             ],
           ),
           Text(
