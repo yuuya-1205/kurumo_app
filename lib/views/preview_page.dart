@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:kurumo_app/themes.dart';
 import 'package:kurumo_app/views/pages/preview/preview_review_body.dart';
 import 'package:kurumo_app/views/pages/preview/vendor_info_body.dart';
 
@@ -30,6 +32,15 @@ class _PreviewPageState extends State<PreviewPage>
   @override
   void initState() {
     super.initState();
+    Fluttertoast.showToast(
+        msg: '利用者にこのページが表示されています。',
+        toastLength: Toast.LENGTH_LONG,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Themes.grayColor[900],
+        textColor: Colors.white,
+        fontSize: 14.0
+    );
     _tabController = TabController(vsync: this, length: _tab.length);
   }
 
@@ -65,6 +76,23 @@ class _PreviewPageState extends State<PreviewPage>
             VendorInfoBody(),
             PreviewReviewBody(),
           ],
+        ),
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Themes.primaryColor,
+            ),
+            onPressed: () {
+              //TODO: 掲載情報の編集ページに遷移
+            },
+            child: const Text(
+              '掲載情報を変更',
+              style: TextStyle(fontWeight: FontWeight.bold),
+            ),
+          ),
         ),
       ),
     );

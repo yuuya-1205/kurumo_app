@@ -36,6 +36,7 @@ class PriceList extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: MediaQuery.removePadding(
         context: context,
+        removeTop: true,
         removeBottom: true,
         child: ListView.separated(
           shrinkWrap: true,

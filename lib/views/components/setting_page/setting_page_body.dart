@@ -125,7 +125,6 @@ class SettingPageBody extends HookConsumerWidget {
                         width: double.infinity,
                         height: 56,
                         child: TextButton(
-                          /// TODO : 掲載ページに遷移する機能を追加
                           onPressed: () {
                             Navigator.push(context, PreviewPage.route());
                           },
