@@ -26,7 +26,9 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
   Widget build(BuildContext context) {
     final companyNameController = TextEditingController();
     final phoneNumberController = TextEditingController();
-    final passwordController = TextEditingController();
+    final postCodeController = TextEditingController();
+    final adderssController = TextEditingController();
+    final buildingNameController = TextEditingController();
 
     return Scaffold(
       appBar: AppBar(
@@ -64,7 +66,7 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
                 ),
                 Flexible(
                   child: InputForm(
-                    controller: passwordController,
+                    controller: postCodeController,
                     hintText: "〒",
                     labelText: "〒",
                   ),
@@ -75,7 +77,7 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
               height: 16,
             ),
             InputForm(
-              controller: passwordController,
+              controller: adderssController,
               hintText: "住所",
               labelText: "住所",
             ),
@@ -83,7 +85,7 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
               height: 16,
             ),
             InputForm(
-              controller: passwordController,
+              controller: buildingNameController,
               hintText: "建物名",
               labelText: "建物名",
             ),
