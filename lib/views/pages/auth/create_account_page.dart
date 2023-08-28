@@ -88,7 +88,7 @@ class _CreateAccuntPageState extends State<CreateAccuntPage> {
                 await Navigator.push(context, CreateCompanyPage.route());
               },
               backgroundColor: primary,
-              text: "アカウントを作成",
+              label: "アカウントを作成",
             ),
           ],
         ),

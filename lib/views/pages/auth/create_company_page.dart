@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:kurumo_app/models/company.dart';
 import 'package:kurumo_app/util/color.dart';
 import 'package:kurumo_app/views/components/button.dart';
 import 'package:kurumo_app/views/components/input_form.dart';
@@ -27,7 +30,7 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
     final companyNameController = TextEditingController();
     final phoneNumberController = TextEditingController();
     final postCodeController = TextEditingController();
-    final adderssController = TextEditingController();
+    final addressController = TextEditingController();
     final buildingNameController = TextEditingController();
 
     return Scaffold(
@@ -77,7 +80,7 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
               height: 16,
             ),
             InputForm(
-              controller: adderssController,
+              controller: addressController,
               hintText: "住所",
               labelText: "住所",
             ),
@@ -98,12 +101,26 @@ class _CreateCompanyPageState extends State<CreateCompanyPage> {
             ),
             Button(
               width: double.infinity,
-              onPressed: () {
+              onPressed: () async {
                 //ここでCompanyが作成されるようにする。
-                Navigator.push(context, HomePage.route());
+                final address = addressController.text;
+                final phoneNumber = phoneNumberController.text;
+                final postCode = postCodeController.text;
+                final companyName = companyNameController.text;
+                final buildingName = buildingNameController.text;
+                final company = Company(
+                    address: address,
+                    buildingName: buildingName,
+                    companyName: companyName,
+                    phoneNumber: phoneNumber,
+                    postCode: postCode);
+                FirebaseFirestore.instance
+                    .collection('companys')
+                    .add(company.toJson());
+                await Navigator.push(context, HomePage.route());
               },
               backgroundColor: primary,
-              text: "アカウントを作成",
+              label: "アカウントを作成",
             ),
           ],
         ),
