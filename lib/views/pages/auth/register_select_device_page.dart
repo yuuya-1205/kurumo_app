@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:kurumo_app/util/color.dart';
 import 'package:kurumo_app/views/components/button.dart';
+import 'package:kurumo_app/views/components/button_list_tile.dart';
 
 import 'register_send_email_page.dart';
 
@@ -50,34 +51,18 @@ class _RegisterSelectDevicePageState extends State<RegisterSelectDevicePage> {
             const SizedBox(
               height: 27,
             ),
-            Button(
-              width: double.infinity,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const RegisterSendEmailPage()),
-                  ),
-                );
-              },
-              backgroundColor: primary,
-              label: "Googleで続ける",
+            ButtonListTile(
+              label: 'Googleでログイン',
+              leadingAssetPath: 'assets/images/google.png',
+              onTap: () {},
             ),
             const SizedBox(
               height: 18,
             ),
-            Button(
-              width: double.infinity,
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: ((context) => const RegisterSendEmailPage()),
-                  ),
-                );
-              },
-              backgroundColor: primary,
-              label: "Appleで続ける",
+            ButtonListTile(
+              label: 'Appleでログイン',
+              leadingAssetPath: 'assets/images/apple_copy.png',
+              onTap: () {},
             ),
           ],
         ),

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:kurumo_app/util/color.dart';
 import 'package:kurumo_app/views/components/button.dart';
+import 'package:kurumo_app/views/components/button_list_tile.dart';
 import 'package:kurumo_app/views/components/input_form.dart';
 import 'package:kurumo_app/views/home_page.dart';
 import 'package:kurumo_app/views/pages/auth/register_select_page.dart';
@@ -26,6 +27,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  bool _showPassword = false;
 
   @override
   void dispose() {
@@ -33,6 +35,10 @@ class _LoginPageState extends State<LoginPage> {
     passwordController.dispose();
     // TODO: implement dispose
     super.dispose();
+  }
+
+  _toggleShowPassword() {
+    setState(() => _showPassword = !_showPassword);
   }
 
   @override
@@ -76,11 +82,25 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 8,
                   ),
-                  InputForm(
+                  TextFormField(
                     controller: passwordController,
-                    suffixIcon: Icons.hide_source_outlined,
-                    hintText: "パスワード",
-                    labelText: "パスワード",
+                    decoration: InputDecoration(
+                      hintText: "パスワード",
+                      fillColor: fillGray,
+                      filled: true,
+                      border: InputBorder.none,
+                      labelText: "パスワード",
+                      labelStyle: const TextStyle(
+                        color: textGray,
+                      ),
+                      suffixIcon: IconButton(
+                        onPressed: _toggleShowPassword,
+                        icon: const Icon(Icons.visibility_off),
+                      ),
+                    ),
+                    obscureText: _showPassword,
+                    focusNode: FocusNode(),
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (value) {
                       if (value!.isEmpty) {
                         return 'パスワードを入力してください';
@@ -134,18 +154,16 @@ class _LoginPageState extends State<LoginPage> {
                   const SizedBox(
                     height: 28,
                   ),
-                  Button(
-                    onPressed: () {},
-                    backgroundColor: primary,
-                    label: "Google",
+                  const ButtonListTile(
+                    label: 'Googleでログイン',
+                    leadingAssetPath: 'assets/images/google.png',
                   ),
                   const SizedBox(
                     height: 18,
                   ),
-                  Button(
-                    onPressed: () {},
-                    backgroundColor: primary,
-                    label: "Apple",
+                  const ButtonListTile(
+                    label: 'Appleでログイン',
+                    leadingAssetPath: 'assets/images/apple_copy.png',
                   ),
                   const SizedBox(
                     height: 74,
