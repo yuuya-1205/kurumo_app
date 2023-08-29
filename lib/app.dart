@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kurumo_app/themes.dart';
+import 'package:kurumo_app/views/pages/auth/create_company_page.dart';
 import 'package:kurumo_app/views/pages/auth/login_page.dart';
 
 class App extends StatelessWidget {
