@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:kurumo_app/views/kari_yoyaku_page.dart';
-import 'package:kurumo_app/views/reserv_list_page.dart';
+import 'package:kurumo_app/views/reservation_list_page.dart';
 
 import 'calendar_page.dart';
 
@@ -60,7 +60,7 @@ class ReservePageState extends State<ReservePage>
       body: TabBarView(
         controller: _tabController,
         children: const <Widget>[
-          Center(child: ReserveListPage()),
+          Center(child: ReservationListPage()),
           Center(child: CalendarPage()),
           Center(child: KariYoyakuPage()),
         ],

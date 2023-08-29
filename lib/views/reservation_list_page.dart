@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-class ReserveListPage extends StatelessWidget {
-  const ReserveListPage({super.key});
+class ReservationListPage extends StatelessWidget {
+  const ReservationListPage({super.key});
 
   static Route<void> route() {
     return MaterialPageRoute(
       settings: const RouteSettings(
         name: '/reserve_list',
       ),
-      builder: (_) => const ReserveListPage(),
+      builder: (_) => const ReservationListPage(),
     );
   }
 
